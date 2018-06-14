@@ -8,6 +8,7 @@ import { JsonToGoComponent } from './json-to-go/json-to-go.component';
 import { JsonParserComponent } from './json-parser/json-parser.component';
 import { AppRoutingModule } from './app-routing.module';
 import { JsCompressComponent } from './js-compress/js-compress.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { JsCompressComponent } from './js-compress/js-compress.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     NgxJsonViewerModule, 
     AceEditorModule

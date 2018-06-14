@@ -1,11 +1,10 @@
 <div class="uk-grid">
     <div class="uk-width-medium-1-2">
-        <div class="uk-panel"><ace-editor [(text)]="code" mode="json" style="height:400px;"></ace-editor></div>
+        <div id="input" contenteditable="">
+          </div>
     </div>
     <div class="uk-width-medium-1-2">
-        <div class="uk-panel" style="max-height: 400px;overflow: scroll;min-height: 400px;">
-          {{data}}
-        </div>
+        <div id="output"></div>
     </div>
     <button (click)="onConvert()"></button>
 </div>
