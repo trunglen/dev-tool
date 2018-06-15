@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JsonValidatorComponent implements OnInit {
 
+  isValid = false
   constructor() { }
 
   ngOnInit() {
   }
 
+  onValidate(json:HTMLInputElement) {
+    try {
+      JSON.parse(json.value)
+      this.isValid = true
+    } catch (error) {
+      console.log(error)
+      this.isValid = false
+    }
+  }
 }
