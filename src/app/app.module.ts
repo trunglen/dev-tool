@@ -9,6 +9,9 @@ import { JsonParserComponent } from './json-parser/json-parser.component';
 import { AppRoutingModule } from './app-routing.module';
 import { JsCompressComponent } from './js-compress/js-compress.component';
 import { FormsModule } from '@angular/forms';
+import { JsonToTsComponent } from './json-to-ts/json-to-ts.component';
+import { SassToCssComponent } from './sass-to-css/sass-to-css.component';
+import { JsonValidatorComponent } from './json-validator/json-validator.component';
 
 
 @NgModule({
@@ -17,7 +20,10 @@ import { FormsModule } from '@angular/forms';
     PageNotFoundComponent,
     JsonToGoComponent,
     JsonParserComponent,
-    JsCompressComponent
+    JsCompressComponent,
+    JsonToTsComponent,
+    SassToCssComponent,
+    JsonValidatorComponent
   ],
   imports: [
     BrowserModule,

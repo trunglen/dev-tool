@@ -1,11 +1,13 @@
-<h1 class="uk-article-title">Json parser (Json pretty)</h1>
+<h1 class="uk-article-title">Json to TS (Convert Json to Typescript)</h1>
 <div class="uk-grid">
     <div class="uk-width-medium-1-2">
         <div class="uk-panel"><ace-editor [(text)]="code" mode="json" style="height:400px;"></ace-editor></div>
     </div>
     <div class="uk-width-medium-1-2">
-        <div class="uk-panel" style="max-height: 400px;overflow: scroll;min-height: 400px;">
-          <ngx-json-viewer [json]="data" [expanded]="false"></ngx-json-viewer>
+        <div class="uk-panel">
+            <div class="uk-panel">
+              <ace-editor [(text)]="data" mode="json" style="height:400px;"></ace-editor>
+            </div>
         </div>
     </div>
 </div>

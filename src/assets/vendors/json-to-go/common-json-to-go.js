@@ -1,3 +1,4 @@
+
 $(function()
 {
 	var emptyInputMsg = "Paste JSON here";
