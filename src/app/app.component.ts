@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { menus } from './common/menu';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  menus = menus
   data = {
     'simple key': 'simple value',
     'numbers': 1234567,

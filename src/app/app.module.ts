@@ -12,6 +12,9 @@ import { FormsModule } from '@angular/forms';
 import { JsonToTsComponent } from './json-to-ts/json-to-ts.component';
 import { SassToCssComponent } from './sass-to-css/sass-to-css.component';
 import { JsonValidatorComponent } from './json-validator/json-validator.component';
+import { TestApiOnlineComponent } from './test-api-online/test-api-online.component';
+import { JsonHolderComponent } from './json-holder/json-holder.component';
+import { CoreModule } from './core/core.module';
 
 
 @NgModule({
@@ -23,11 +26,14 @@ import { JsonValidatorComponent } from './json-validator/json-validator.componen
     JsCompressComponent,
     JsonToTsComponent,
     SassToCssComponent,
-    JsonValidatorComponent
+    JsonValidatorComponent,
+    TestApiOnlineComponent,
+    JsonHolderComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    CoreModule,
     AppRoutingModule,
     NgxJsonViewerModule, 
     AceEditorModule

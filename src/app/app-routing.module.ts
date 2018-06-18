@@ -7,6 +7,8 @@ import { JsCompressComponent } from './js-compress/js-compress.component';
 import { JsonToTsComponent } from './json-to-ts/json-to-ts.component';
 import { SassToCssComponent } from './sass-to-css/sass-to-css.component';
 import { JsonValidatorComponent } from './json-validator/json-validator.component';
+import { TestApiOnlineComponent } from './test-api-online/test-api-online.component';
+import { JsonHolderComponent } from './json-holder/json-holder.component';
 
 const routes: Routes = [
     { path: 'json-to-go', component: JsonToGoComponent },
@@ -15,6 +17,8 @@ const routes: Routes = [
     { path: 'json-to-ts', component: JsonToTsComponent },
     { path: 'sass-to-css', component: SassToCssComponent },
     { path: 'json-validator', component: JsonValidatorComponent },
+    { path: 'json-holder', component: JsonHolderComponent },
+    { path: 'test-api-online', component: TestApiOnlineComponent },
     { path: '**', component: PageNotFoundComponent },
 ];
 
@@ -22,4 +26,4 @@ const routes: Routes = [
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
