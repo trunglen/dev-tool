@@ -9,6 +9,7 @@ import { SassToCssComponent } from './sass-to-css/sass-to-css.component';
 import { JsonValidatorComponent } from './json-validator/json-validator.component';
 import { TestApiOnlineComponent } from './test-api-online/test-api-online.component';
 import { JsonHolderComponent } from './json-holder/json-holder.component';
+import { EpochConverterComponent } from './epoch-converter/epoch-converter.component';
 
 const routes: Routes = [
     { path: 'json-to-go', component: JsonToGoComponent },
@@ -19,6 +20,7 @@ const routes: Routes = [
     { path: 'json-validator', component: JsonValidatorComponent },
     { path: 'json-holder', component: JsonHolderComponent },
     { path: 'test-api-online', component: TestApiOnlineComponent },
+    { path: 'epoch-converter-online', component: EpochConverterComponent },
     { path: '**', component: PageNotFoundComponent },
 ];
 

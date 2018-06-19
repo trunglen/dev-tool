@@ -15,6 +15,7 @@ import { JsonValidatorComponent } from './json-validator/json-validator.componen
 import { TestApiOnlineComponent } from './test-api-online/test-api-online.component';
 import { JsonHolderComponent } from './json-holder/json-holder.component';
 import { CoreModule } from './core/core.module';
+import { EpochConverterComponent } from './epoch-converter/epoch-converter.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { CoreModule } from './core/core.module';
     SassToCssComponent,
     JsonValidatorComponent,
     TestApiOnlineComponent,
-    JsonHolderComponent
+    JsonHolderComponent,
+    EpochConverterComponent
   ],
   imports: [
     BrowserModule,

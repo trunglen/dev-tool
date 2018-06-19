@@ -43,5 +43,10 @@ export const menus = [
         label: 'Test Api Online',
         router: ['test-api-online'],
         icon: 'test-api-online.png'
+    }, 
+    {
+        label: 'Epoch Converter ',
+        router: ['epoch-converter-online'],
+        icon: 'epoch-converter.png'
     }
 ]
