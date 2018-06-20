@@ -10,6 +10,8 @@ import { JsonValidatorComponent } from './json-validator/json-validator.componen
 import { TestApiOnlineComponent } from './test-api-online/test-api-online.component';
 import { JsonHolderComponent } from './json-holder/json-holder.component';
 import { EpochConverterComponent } from './epoch-converter/epoch-converter.component';
+import { ImageToBase64Component } from './image-to-base64/image-to-base64.component';
+import { DatabaseCheatSheetComponent } from './database-cheat-sheet/database-cheat-sheet.component';
 
 const routes: Routes = [
     { path: 'json-to-go', component: JsonToGoComponent },
@@ -21,6 +23,8 @@ const routes: Routes = [
     { path: 'json-holder', component: JsonHolderComponent },
     { path: 'test-api-online', component: TestApiOnlineComponent },
     { path: 'epoch-converter-online', component: EpochConverterComponent },
+    { path: 'image-to-base64', component: ImageToBase64Component },
+    { path: 'database-cheat-sheet', component: DatabaseCheatSheetComponent },
     { path: '**', component: PageNotFoundComponent },
 ];
 

@@ -1,0 +1,22 @@
+<h1 class="uk-article-title">Image To Base64 Converter</h1>
+<button class="uk-button uk-button-primary" (click)="file.click()">Upload Image</button>
+<input type="file" #file [hidden]="true" (change)="previewFile()">
+<div class="uk-grid uk-margin" data-uk-grid-margin>
+  <div class="uk-width-medium-1-5 uk-row-first">
+    <div class="uk-thumbnail">
+      <a class="uk-thumbnail">
+        <img [src]="imageUploaded" alt="" class="load-image">
+        <div class="uk-thumbnail-caption">Image Uploaded</div>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="uk-block">
+    <div class="uk-form-row">
+        <p class="uk-article-lead">For image using</p>
+        <textarea class="uk-width-1 base64-output" rows="5" #outputImg></textarea>
+        <p class="uk-article-lead">For background using</p>
+        <textarea class="uk-width-1 base64-output-css" rows="5" #outputCSS></textarea>
+    </div>
+</div>
+<app-loading *ngIf="isLoading"></app-loading>

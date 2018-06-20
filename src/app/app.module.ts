@@ -16,6 +16,8 @@ import { TestApiOnlineComponent } from './test-api-online/test-api-online.compon
 import { JsonHolderComponent } from './json-holder/json-holder.component';
 import { CoreModule } from './core/core.module';
 import { EpochConverterComponent } from './epoch-converter/epoch-converter.component';
+import { ImageToBase64Component } from './image-to-base64/image-to-base64.component';
+import { DatabaseCheatSheetComponent } from './database-cheat-sheet/database-cheat-sheet.component';
 
 
 @NgModule({
@@ -30,7 +32,9 @@ import { EpochConverterComponent } from './epoch-converter/epoch-converter.compo
     JsonValidatorComponent,
     TestApiOnlineComponent,
     JsonHolderComponent,
-    EpochConverterComponent
+    EpochConverterComponent,
+    ImageToBase64Component,
+    DatabaseCheatSheetComponent
   ],
   imports: [
     BrowserModule,

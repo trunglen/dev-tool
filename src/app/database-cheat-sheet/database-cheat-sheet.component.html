@@ -1,0 +1,23 @@
+<h1 class="uk-article-title">Database cheat sheet</h1>
+<p class="uk-article-lead">Select database technology to get cheat sheet.</p>
+<div class="uk-form-controls">
+    <label *ngFor="let t of terminologyNames"><input type="checkbox" [(ngModel)]="selectedTechnologies"> {{t}}</label> 
+    <button class="uk-button uk-margin-left uk-button-primary" (click)="onCompare()">Compare</button>
+</div>
+<table class="uk-table">
+    <thead>
+        <tr>
+            <th>...</th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <td>...</td>
+        </tr>
+    </tfoot>
+    <tbody>
+        <tr>
+            <td>...</td>
+        </tr>
+    </tbody>
+</table>

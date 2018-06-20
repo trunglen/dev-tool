@@ -11,8 +11,8 @@
         </fieldset>
         <div class="uk-alert uk-alert-success">
           <div class="uk-width-1">
-            <b>GMT: </b>{{localTime}} <br>
-            <b>Your time zone: </b>{{gmtTime}}
+            <b>GMT: </b>{{gmtTime}} <br>
+            <b>Your time zone: </b>{{localTime}}
           </div>
         </div>
     </form>
@@ -52,27 +52,49 @@
             <div class="uk-grid">
                 <div class="uk-width-1-1 uk-margin">
                     <div class="uk-form-controls">
-                        <input type="radio" id="form-s-r1" name="radio"> <label for="form-s-r1">Year</label>
-                        <label><input type="radio" name="radio"> Month</label>
-                        <label><input type="radio" name="radio"> Day</label>
+                        <input type="radio" id="form-s-r1" name="startOf"  
+                            value="year" (click)="changeStartOf('year')"> <label for="form-s-r1">Year</label>
+                        <label>
+                            <input type="radio" name="startOf" value="month" (click)="changeStartOf('month')"> 
+                            Month
+                        </label>
+                        <label>
+                            <input type="radio" name="startOf" value="day" (click)="changeStartOf('day')" checked="checked"> Day
+                        </label>
                     </div>
                 </div>
               <div class="uk-width-8-10">
-                  <label for="form-s-mix3">Year - </label><input type="number" name="year" [(ngModel)]="dateConvert.year" class="uk-width-1-10" id="form-s-mix3" >
-                  <label for="form-s-mix4">Month - </label> <input type="number" name="month" [(ngModel)]="dateConvert.month" class="uk-width-1-10" id="form-s-mix4">
-                  <label for="form-s-mix4">Day - </label> <input type="number" name="day" [(ngModel)]="dateConvert.day" class="uk-width-1-10" id="form-s-mix4">
+                  <label for="form-s-mix3">Year - </label><input type="number" name="year" [(ngModel)]="dateConvert.year"  #startOfYear class="uk-width-1-10" id="form-s-mix3"  >
+                  <label for="form-s-mix4">Month - </label> <input type="number" name="month" [(ngModel)]="dateConvert.month" class="uk-width-1-10" #startOfMonth id="form-s-mix4">
+                  <label for="form-s-mix5">Day - </label> <input type="number" name="day" [(ngModel)]="dateConvert.day" class="uk-width-1-10" id="form-s-mix5"  #startOfDay>
                   <select class="uk-width-1-10" [(ngModel)]="timeZone" name="timeZone">
                         <option value="0">Local</option>
                         <option value="1">GMT</option>
                     </select>
                 </div>
                 <div class="uk-width-1-1">
-                    <button class="uk-button uk-margin-top uk-button-primary" (click)="onConvertToUnix()">Convert To Unix Time</button>
-                    <div class="uk-alert" data-uk-alert  *ngIf="localTimeStampFromDate!=0">
-                        <b>Epoch Timestamp: </b><h2>{{localTimeStampFromDate}}</h2>
-                        <b>Local Epoch Time: </b>{{localEpochTime}}<br/>
-                        <b>GMT Epoch Time: </b>{{gmtEpochTime}}
-                    </div>
+                    <button class="uk-button uk-margin-top uk-button-primary" (click)="onConvertStartOf();showStartOfTable=true">Convert</button>
+                    <table class="uk-table" [hidden]="!showStartOfTable">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Epoch</th>
+                                    <th>Human date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Start of {{startOf}}: </td>
+                                    <td id="startOfEpoch">1529452800 </td>
+                                    <td id="startOfTime">Wednesday, 20 June 2018 00:00:00 </td>
+                                </tr>
+                                <tr>
+                                    <td>Start of {{startOf}}: </td>
+                                    <td id="endOfEpoch">1529452800 </td>
+                                    <td id="endOfTime">Wednesday, 20 June 2018 00:00:00 </td>
+                                </tr>
+                            </tbody>
+                        </table>
                 </div>
             </div>
         </fieldset>
