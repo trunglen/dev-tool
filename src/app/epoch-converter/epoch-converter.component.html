@@ -11,8 +11,8 @@
         </fieldset>
         <div class="uk-alert uk-alert-success">
           <div class="uk-width-1">
-            <b>GMT: </b>{{gmtTime}} <br>
-            <b>Your time zone: </b>{{localTime}}
+            <b>GMT: </b>{{localTime}} <br>
+            <b>Your time zone: </b>{{gmtTime}}
           </div>
         </div>
     </form>
@@ -22,13 +22,81 @@
     <fieldset data-uk-margin="">
         <legend>Date to Timestamp</legend>
         <div class="uk-grid">
-          <div class="uk-width-1-10">Year  <input type="number" class="uk-margin-small-top"></div>
-          <div class="uk-width-1-10"> Month <input type="number" class="uk-margin-small-top"></div>
-          <div class="uk-width-1-10">Day <input type="number" class="uk-margin-small-top"></div>
-          <div class="uk-width-1-10">Hour <input type="number" class="uk-margin-small-top"></div>
-          <div class="uk-width-1-10">Min <input type="number" class="uk-margin-small-top"></div>
-          <div class="uk-width-1-10">Sec <input type="number" class="uk-margin-small-top"></div>
-            <button class="uk-button uk-margin-small-top">Button</button>
+          <div class="uk-width-8-10">
+              <label for="form-s-mix3">Year - </label><input type="number" name="year" [(ngModel)]="dateConvert.year" class="uk-width-1-10" id="form-s-mix3" >
+              <label for="form-s-mix4">Month - </label> <input type="number" name="month" [(ngModel)]="dateConvert.month" class="uk-width-1-10" id="form-s-mix4">
+              <label for="form-s-mix4">Day - </label> <input type="number" name="day" [(ngModel)]="dateConvert.day" class="uk-width-1-10" id="form-s-mix4">
+              <label for="form-s-mix4">Hour - </label> <input type="number" name="hour" [(ngModel)]="dateConvert.hour" class="uk-width-1-10" id="form-s-mix4">
+              <label for="form-s-mix4">Min - </label> <input type="number" name="minute" [(ngModel)]="dateConvert.minute" class="uk-width-1-10" id="form-s-mix4">
+              <label for="form-s-mix4">Sec - </label> <input type="number" name="second" [(ngModel)]="dateConvert.second" class="uk-width-1-10" id="form-s-mix4">
+              <select class="uk-width-1-10" [(ngModel)]="timeZone" name="timeZone">
+                    <option value="0">Local</option>
+                    <option value="1">GMT</option>
+                </select>
+            </div>
+            <div class="uk-width-1-1">
+                <button class="uk-button uk-margin-top uk-button-primary" (click)="onConvertToUnix()">Convert To Unix Time</button>
+                <div class="uk-alert" data-uk-alert  *ngIf="localTimeStampFromDate!=0">
+                    <b>Epoch Timestamp: </b><h2>{{localTimeStampFromDate}}</h2>
+                    <b>Local Epoch Time: </b>{{localEpochTime}}<br/>
+                    <b>GMT Epoch Time: </b>{{gmtEpochTime}}
+                </div>
+            </div>
         </div>
     </fieldset>
 </form>
+<hr class="uk-grid-divider"/>
+<h4 class="tm-article-subtitle">Epoch dates for the start and end of the year/month/day</h4>
+<form class="uk-form">
+        <fieldset data-uk-margin="">
+            <div class="uk-grid">
+                <div class="uk-width-1-1 uk-margin">
+                    <div class="uk-form-controls">
+                        <input type="radio" id="form-s-r1" name="radio"> <label for="form-s-r1">Year</label>
+                        <label><input type="radio" name="radio"> Month</label>
+                        <label><input type="radio" name="radio"> Day</label>
+                    </div>
+                </div>
+              <div class="uk-width-8-10">
+                  <label for="form-s-mix3">Year - </label><input type="number" name="year" [(ngModel)]="dateConvert.year" class="uk-width-1-10" id="form-s-mix3" >
+                  <label for="form-s-mix4">Month - </label> <input type="number" name="month" [(ngModel)]="dateConvert.month" class="uk-width-1-10" id="form-s-mix4">
+                  <label for="form-s-mix4">Day - </label> <input type="number" name="day" [(ngModel)]="dateConvert.day" class="uk-width-1-10" id="form-s-mix4">
+                  <select class="uk-width-1-10" [(ngModel)]="timeZone" name="timeZone">
+                        <option value="0">Local</option>
+                        <option value="1">GMT</option>
+                    </select>
+                </div>
+                <div class="uk-width-1-1">
+                    <button class="uk-button uk-margin-top uk-button-primary" (click)="onConvertToUnix()">Convert To Unix Time</button>
+                    <div class="uk-alert" data-uk-alert  *ngIf="localTimeStampFromDate!=0">
+                        <b>Epoch Timestamp: </b><h2>{{localTimeStampFromDate}}</h2>
+                        <b>Local Epoch Time: </b>{{localEpochTime}}<br/>
+                        <b>GMT Epoch Time: </b>{{gmtEpochTime}}
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+
+<hr class="uk-grid-divider"/>
+<h4 class="tm-article-subtitle">How to get the current epoch time in ...</h4>
+<dl class="uk-description-list-horizontal">
+    <dt>PHP timestamp</dt>
+    <dd>time()</dd>
+    <dt>Python</dt>
+    <dd>import time; time.time()</dd>
+    <dt>Ruby</dt>
+    <dd>Time.now (or Time.new). To display the epoch: Time.now.to_i</dd>
+    <dt>Perl timestamp</dt>
+    <dd>time</dd>
+    <dt>Java</dt>
+    <dd>long epoch = System.currentTimeMillis()/1000;</dd>
+    <dt>C#</dt>
+    <dd>var epoch = (DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).TotalSeconds;</dd>
+    <dt>Go timestamp</dt>
+    <dd>time.Now().Unix()</dd>
+    <dt>JavaScript</dt>
+    <dd>Math.round(new Date().getTime()/1000.0) getTime() returns time in milliseconds.</dd>
+    <dt>Erlang/OTP</dt>
+    <dd>	erlang:system_time(seconds). (version 18+), older versions:<br/> calendar:datetime_to_gregorian_seconds(calendar:universal_time())-719528*24*3600.</dd>
+</dl>
