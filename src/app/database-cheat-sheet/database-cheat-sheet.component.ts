@@ -17,6 +17,5 @@ export class DatabaseCheatSheetComponent implements OnInit {
   }
 
   onCompare() {
-    console.log(this.selectedTechnologies)
   }
 }

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { jsonToGo } from '../shared/x/json_to_go';
 
 @Component({
   selector: 'app-json-to-go',

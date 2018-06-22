@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { sampleTSInput } from '../common/sample';
+import { sampleTSInput } from '../../common/sample';
 declare var require: any
 const JsonToTS = require('json-to-ts')
 

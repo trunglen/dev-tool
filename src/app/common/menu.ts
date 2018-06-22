@@ -6,27 +6,27 @@ export const menus = [
     },
     {
         label: 'Json Parser',
-        router: ['json-parser'],
+        router: ['json-utils/json-parser'],
         icon: 'json-parser.png'
     },
     {
         label: 'JSON Validator',
-        router: ['json-validator'],
+        router: ['json-utils/json-validator'],
         icon: 'json-validator.png'
     }, 
     {
         label: 'JSON holder',
-        router: ['json-holder'],
+        router: ['json-utils/json-holder'],
         icon: 'json-holder.png'
     },
     {
         label: 'Json to Go',
-        router: ['json-to-go'],
+        router: ['json-utils/json-to-go'],
         icon: 'json-to-go.png'
     },
     {
         label: 'Json to TS',
-        router: ['json-to-ts'],
+        router: ['json-utils/json-to-ts'],
         icon: 'json-to-ts.png'
     },
     {
@@ -36,12 +36,12 @@ export const menus = [
     },
     {
         label: 'JS Compress',
-        router: ['js-compress'],
+        router: ['minify/js-compress'],
         icon: 'js-compress.png'
     },
     {
         label: 'CSS Compress',
-        router: ['css-compress'],
+        router: ['minify/css-compress'],
         icon: 'css-compress.png'
     },
     {

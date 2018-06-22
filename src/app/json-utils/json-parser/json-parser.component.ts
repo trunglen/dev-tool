@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { sampleInput } from '../common/sample';
+import { sampleInput } from '../../common/sample';
 
 @Component({
   selector: 'app-json-parser',
