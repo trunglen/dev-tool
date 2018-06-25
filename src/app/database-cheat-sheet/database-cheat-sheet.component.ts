@@ -14,6 +14,7 @@ export class DatabaseCheatSheetComponent implements OnInit {
 
   ngOnInit() {
     getTerminology(['sql', 'rethink'])
+    
   }
 
   onCompare() {

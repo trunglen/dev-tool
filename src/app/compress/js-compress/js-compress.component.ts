@@ -23,4 +23,11 @@ export class JsCompressComponent implements OnInit {
       js.value = (res.minified)
     })
   }
+  onCheckDa(js: HTMLInputElement) {
+    const formData = new FormData()
+    formData.append('urls', js.value)
+    this.http.get('http://us-central1-opencoder-89f02.cloudfunctions.net/api/posts/list').subscribe((res: any) => {
+      js.value = (res.minified)
+    })
+  }
 }

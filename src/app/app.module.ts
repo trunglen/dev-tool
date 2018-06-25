@@ -5,7 +5,7 @@ import { AceEditorModule } from 'ng2-ace-editor';
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AppRoutingModule } from './app-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms'; 
 import { SassToCssComponent } from './sass-to-css/sass-to-css.component';
 import { TestApiOnlineComponent } from './test-api-online/test-api-online.component';
 import { CoreModule } from './core/core.module';

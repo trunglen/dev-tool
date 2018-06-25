@@ -60,7 +60,7 @@ export class EpochConverterComponent implements OnInit {
     }
   }
 
-  onConvertStartOf(input: HTMLInputElement) {
+  onConvertStartOf() {
     // console.log(input.disabled =true)
     const value = (el: ElementRef) => {
       return el.nativeElement.value * 1
