@@ -22,6 +22,11 @@ export class TestApiOnlineComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    const start = new Date().getTime()
+    this.http.get('http://dantri.com.vn/').subscribe(res=>{
+      console.log(res);
+      const timing = new Date().getTime()-start;
+    })
   }
 
   initComponent() {
