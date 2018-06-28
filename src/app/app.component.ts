@@ -1,12 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { menus } from './common/menu';
+import { SeoService } from './seo.service';
+import { home } from './common/tags';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+
+  constructor(private seoService: SeoService) {
+
+  }
+
+  ngOnInit(): void {
+    this.seoService.generateTags({
+      title: home.title,
+      description: home.description
+    })
+  }
   menus = menus
   data = {
     'simple key': 'simple value',
@@ -26,15 +39,15 @@ export class AppComponent {
     }
   };
 
-  get code () {
+  get code() {
     return JSON.stringify(this.data, null, 2);
   }
 
-  set code (v) {
-    try{
+  set code(v) {
+    try {
       this.data = JSON.parse(v);
     }
-    catch(e) {
+    catch (e) {
       console.log('error occored while you were typing the JSON');
     };
   }

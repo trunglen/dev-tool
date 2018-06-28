@@ -7,15 +7,15 @@ import { JsonParserComponent } from './json-parser/json-parser.component';
 import { JsonToGoComponent } from './json-to-go/json-to-go.component';
 import { JsonValidatorComponent } from './json-validator/json-validator.component';
 import { JsonToTsComponent } from './json-to-ts/json-to-ts.component';
-import { AceEditorModule } from 'ng2-ace-editor';
-import { NgxJsonViewerModule } from 'ngx-json-viewer';
+import { SharedModule } from '../shared/shared.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
     JsonUtilsRoutingModule,
-    NgxJsonViewerModule, 
-    AceEditorModule
+    SharedModule,
+    FormsModule
   ],
   declarations: [
     JsonHolderComponent,

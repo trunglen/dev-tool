@@ -28,4 +28,6 @@ export class JsonParserComponent implements OnInit {
     };
   }
 
+  editorOptions = {theme: 'vs-dark', language: 'json'};
+
 }

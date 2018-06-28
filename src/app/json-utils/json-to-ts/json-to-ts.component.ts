@@ -16,6 +16,7 @@ export class JsonToTsComponent implements OnInit {
   }
 
   set code(v) {
+    this.data = ''
     try {
       JsonToTS(JSON.parse(v)).forEach(typeInterface => {
         this.data += typeInterface + '\n\n'
@@ -33,6 +34,7 @@ export class JsonToTsComponent implements OnInit {
     this.code = JSON.stringify(sampleTSInput, null, 2);
     // this.output = JsonToTS(this.input)
   }
-
+  editorOptions = { theme: 'vs-dark', language: 'json' };
+  editorOptionsOutput = { theme: 'vs-dark', language: 'typescript' };
 }
 

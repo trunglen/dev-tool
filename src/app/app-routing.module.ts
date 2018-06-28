@@ -6,6 +6,7 @@ import { TestApiOnlineComponent } from './test-api-online/test-api-online.compon
 import { EpochConverterComponent } from './epoch-converter/epoch-converter.component';
 import { ImageToBase64Component } from './image-to-base64/image-to-base64.component';
 import { DatabaseCheatSheetComponent } from './database-cheat-sheet/database-cheat-sheet.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
 
@@ -16,6 +17,7 @@ const routes: Routes = [
     { path: 'epoch-converter-online', component: EpochConverterComponent },
     { path: 'image-to-base64', component: ImageToBase64Component },
     { path: 'database-cheat-sheet', component: DatabaseCheatSheetComponent },
+    { path: '', component: HomeComponent },
     { path: '**', component: PageNotFoundComponent },
 ];
 

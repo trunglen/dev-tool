@@ -29,11 +29,11 @@ export const menus = [
         router: ['json-utils/json-to-ts'],
         icon: 'json-to-ts.png'
     },
-    {
-        label: 'Database Cheat Sheet',
-        router: ['database-cheat-sheet'],
-        icon: 'database-cheat-sheet.png'
-    },
+    // {
+    //     label: 'Database Cheat Sheet',
+    //     router: ['database-cheat-sheet'],
+    //     icon: 'database-cheat-sheet.png'
+    // },
     {
         label: 'JS Compress',
         router: ['minify/js-compress'],
@@ -44,11 +44,11 @@ export const menus = [
         router: ['minify/css-compress'],
         icon: 'css-compress.png'
     },
-    {
-        label: 'SASS to CSS',
-        router: ['sass-to-css'],
-        icon: 'sass-to-css.png'
-    }, 
+    // {
+    //     label: 'SASS to CSS',
+    //     router: ['sass-to-css'],
+    //     icon: 'sass-to-css.png'
+    // }, 
     {
         label: 'Test Api Online',
         router: ['test-api-online'],
