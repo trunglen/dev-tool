@@ -21,8 +21,8 @@ const routes: Routes = [
     { path: '**', component: PageNotFoundComponent },
 ];
 
-@NgModule({
-    imports: [RouterModule.forRoot(routes)],
+@NgModule({ 
+    imports: [RouterModule.forRoot(routes,{useHash:true})],
     exports: [RouterModule]
 })
 export class AppRoutingModule { }

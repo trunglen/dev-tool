@@ -1,3 +1,82 @@
-<p>
-  json-holder works!
-</p>
+<article class="uk-article">
+  <h1 class="uk-article-title">Json place holder</h1>
+  <p class="uk-article-meta">Written by Grurt Nel</p>
+  <p class="uk-article-lead">Description.</p>
+  <p>This is a free online REST service that you can use whenever you need some fake data to do demo application.</p>
+  
+  <pre>
+  Host: https://us-central1-opencoder-89f02.cloudfunctions.net (support http)
+  Content-Type: application/json; charset=utf-8</pre>
+  <table class="uk-table">
+      <thead>
+          <tr>
+              <th></th>
+              <th>Path</th>
+              <th>Query</th>
+              <th>Body</th>
+              <th>Response</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td>GET</td>
+              <td>/api/posts/list</td>
+              <td>page: number (0 if load all)</td>
+              <td>No</td>
+              <td><a class="uk-button uk-button-primary" href="https://us-central1-opencoder-89f02.cloudfunctions.net/api/posts/list" target="blank" type="button">View</a></td>
+          </tr>
+          <tr>
+              <td>POST</td>
+              <td>/api/posts/create</td>
+              <td>No</td>
+              <td><pre class="code">{{postBody|json}}</pre></td>
+              <td>
+                <div [hidden]="!showPostRes">
+                  <pre style="background-color: #82bb42;color: white">{{successReponse|json}}
+status code : 200
+                </pre>
+                <pre style="background-color: #d32c46;color: white">{{errorNotExistUserReponse|json}}
+status code : 400
+errMsg:title must not be empty
+errMsg:content must not be empty
+errMsg:author not exists (user_name must exists in users)
+                </pre>
+              </div>
+                  <button class="uk-button uk-button-primary" (click)="showPostRes=!showPostRes" type="button">{{showPostRes?'Hide':'Show'}}</button>
+              </td>
+          </tr>
+          <tr>
+              <td>GET</td>
+              <td>/api/users/list</td>
+              <td>page: number (0 if load all)</td>
+              <td>No</td>
+              <td>
+                <a class="uk-button uk-button-primary" type="button" target="blank"  href="https://us-central1-opencoder-89f02.cloudfunctions.net/api/users/list">View</a>
+                <pre class="code" *ngIf="">{{userBody|json}}</pre>
+              </td>
+          </tr>
+          <tr>
+              <td>POST</td>
+              <td>/api/users/create</td>
+              <td>No</td>
+              <td>
+                  <pre class="code">{{userBody|json}}</pre>
+              </td>
+              <td>
+                <div [hidden]="!showUserRes">
+                <pre style="background-color: #82bb42;color: white">{{successReponse|json}}
+status code : 200
+                </pre>
+                <pre style="background-color: #d32c46;color: white">{{errorExistUserReponse|json}}
+status code : 400
+errMsg:user_name must not be empty
+errMsg:full_name must not be empty
+                </pre>
+                </div>
+                <button class="uk-button uk-button-primary" type="button" (click)="showUserRes=!showUserRes">{{showUserRes?'Hide':'Show'}}</button>                
+              </td>
+          </tr> 
+      </tbody>
+  </table>
+  <hr class="uk-article-divider">
+</article>

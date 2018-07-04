@@ -12,4 +12,11 @@ export class JsonHolderComponent implements OnInit {
   ngOnInit() {
   }
 
+  showPostRes = false
+  showUserRes = false
+  userBody = { "user_name": "trunglv", "full_name": "trung luu" }
+  postBody = { "title": "hello every body", "content": "Opencoder.org - small dev tool for developer", "author": "trunglv" }
+  successReponse = { "status": "success" }
+  errorExistUserReponse = { "error": "author exists" }
+  errorNotExistUserReponse = { "error": "author not exists" }
 }
